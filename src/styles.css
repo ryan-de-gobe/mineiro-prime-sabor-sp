@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: "DM Sans", sans-serif;
-  --font-display: "DM Serif Display", serif;
+  --font-sans: "Noto Sans", sans-serif;
+  --font-display: "Noto Serif", serif;
   --radius-sm: calc(var(--radius) - 3px);
   --radius-md: calc(var(--radius) - 1px);
   --radius-lg: var(--radius);
@@ -53,44 +53,44 @@
 
 :root {
   --radius: 0.375rem;
-  --background: oklch(0.975 0.014 87);
-  --foreground: oklch(0.23 0.028 55);
-  --card: oklch(0.99 0.009 87);
-  --card-foreground: oklch(0.23 0.028 55);
-  --popover: oklch(0.99 0.009 87);
-  --popover-foreground: oklch(0.23 0.028 55);
-  --primary: oklch(0.46 0.105 43);
-  --primary-foreground: oklch(0.98 0.012 87);
-  --secondary: oklch(0.935 0.025 83);
-  --secondary-foreground: oklch(0.27 0.035 55);
-  --muted: oklch(0.935 0.025 83);
-  --muted-foreground: oklch(0.48 0.025 55);
-  --accent: oklch(0.88 0.055 83);
-  --accent-foreground: oklch(0.28 0.04 55);
+  --background: oklch(0.975 0.008 80);
+  --foreground: oklch(0.22 0.025 28);
+  --card: oklch(0.992 0.005 80);
+  --card-foreground: oklch(0.22 0.025 28);
+  --popover: oklch(0.992 0.005 80);
+  --popover-foreground: oklch(0.22 0.025 28);
+  --primary: oklch(0.39 0.15 25);
+  --primary-foreground: oklch(0.98 0.008 80);
+  --secondary: oklch(0.94 0.018 78);
+  --secondary-foreground: oklch(0.25 0.03 28);
+  --muted: oklch(0.94 0.018 78);
+  --muted-foreground: oklch(0.47 0.025 35);
+  --accent: oklch(0.88 0.045 75);
+  --accent-foreground: oklch(0.28 0.05 28);
   --destructive: oklch(0.55 0.21 28);
   --destructive-foreground: oklch(0.98 0.01 87);
-  --border: oklch(0.84 0.028 78);
-  --input: oklch(0.84 0.028 78);
-  --ring: oklch(0.58 0.11 65);
-  --brand-gold: oklch(0.77 0.14 77);
-  --brand-gold-strong: oklch(0.83 0.14 82);
-  --brand-ink: oklch(0.2 0.025 55);
-  --header: oklch(0.19 0.025 55);
-  --header-foreground: oklch(0.97 0.012 87);
-  --header-muted: oklch(0.82 0.018 80);
-  --header-border: oklch(0.97 0.012 87 / 0.14);
-  --header-soft: oklch(0.97 0.012 87 / 0.08);
-  --footer: oklch(0.17 0.024 55);
-  --footer-foreground: oklch(0.97 0.012 87);
-  --footer-muted: oklch(0.72 0.02 78);
-  --footer-border: oklch(0.97 0.012 87 / 0.12);
-  --section-dark: oklch(0.22 0.035 55);
-  --section-dark-foreground: oklch(0.97 0.012 87);
-  --section-dark-muted: oklch(0.79 0.02 80);
-  --hero-foreground: oklch(0.98 0.01 87);
-  --hero-muted: oklch(0.87 0.02 82);
+  --border: oklch(0.84 0.025 68);
+  --input: oklch(0.84 0.025 68);
+  --ring: oklch(0.52 0.15 28);
+  --brand-gold: oklch(0.75 0.12 78);
+  --brand-gold-strong: oklch(0.82 0.13 82);
+  --brand-ink: oklch(0.19 0.025 28);
+  --header: oklch(0.18 0.045 27);
+  --header-foreground: oklch(0.97 0.008 80);
+  --header-muted: oklch(0.82 0.02 76);
+  --header-border: oklch(0.97 0.008 80 / 0.14);
+  --header-soft: oklch(0.97 0.008 80 / 0.08);
+  --footer: oklch(0.16 0.035 27);
+  --footer-foreground: oklch(0.97 0.008 80);
+  --footer-muted: oklch(0.73 0.02 72);
+  --footer-border: oklch(0.97 0.008 80 / 0.12);
+  --section-dark: oklch(0.25 0.095 25);
+  --section-dark-foreground: oklch(0.97 0.008 80);
+  --section-dark-muted: oklch(0.83 0.025 72);
+  --hero-foreground: oklch(0.98 0.008 80);
+  --hero-muted: oklch(0.88 0.02 76);
   --hero-border: oklch(0.98 0.01 87 / 0.4);
-  --hero-soft: oklch(0.18 0.02 55 / 0.32);
+  --hero-soft: oklch(0.16 0.04 28 / 0.38);
   --hero-hover: oklch(0.98 0.01 87 / 0.12);
 }
 
@@ -109,7 +109,12 @@
 }
 
 @utility bg-hero-overlay {
-  background: linear-gradient(90deg, oklch(0.13 0.02 55 / 0.92) 0%, oklch(0.13 0.02 55 / 0.68) 38%, oklch(0.13 0.02 55 / 0.08) 76%);
+  background: linear-gradient(90deg, oklch(0.12 0.035 25 / 0.94) 0%, oklch(0.15 0.055 25 / 0.7) 42%, oklch(0.15 0.04 25 / 0.08) 80%);
+}
+
+@utility pattern-lattice {
+  background-image: linear-gradient(45deg, transparent 46%, oklch(0.75 0.12 78 / 0.07) 47%, oklch(0.75 0.12 78 / 0.07) 53%, transparent 54%), linear-gradient(-45deg, transparent 46%, oklch(0.75 0.12 78 / 0.07) 47%, oklch(0.75 0.12 78 / 0.07) 53%, transparent 54%);
+  background-size: 28px 28px;
 }
 
 @utility animate-rise { animation: rise 700ms ease-out both; }
