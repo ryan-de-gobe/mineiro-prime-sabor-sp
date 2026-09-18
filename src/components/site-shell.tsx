@@ -85,7 +85,7 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-      <div className="border-t border-footer-border px-5 py-5 text-center text-xs text-footer-muted">© 2026 O Mineiro Prime. Todos os direitos reservados.</div>
+      <div className="border-t border-footer-border px-5 py-5 text-center text-xs text-footer-muted">Projeto demonstrativo — site não oficial</div>
     </footer>
   );
 }

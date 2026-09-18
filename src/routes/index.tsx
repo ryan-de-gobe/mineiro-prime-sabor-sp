@@ -7,9 +7,6 @@ import heroImage from "@/assets/hero-mineiro.jpg";
 import foodImage from "@/assets/porcoes-brasileiras.jpg";
 import interiorImage from "@/assets/ambiente-restaurante.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -25,7 +22,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   const highlights: Array<[LucideIcon, string, string]> = [
     [UtensilsCrossed, "Culinária mineira", "Sabores brasileiros em destaque"],
@@ -79,16 +75,6 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-background px-5 py-20 lg:px-8 lg:py-28">
-        <div className="mx-auto max-w-7xl text-center">
-          <p className="eyebrow text-primary">Avaliações</p>
-          <h2 className="mt-4 font-display text-4xl sm:text-5xl">A experiência de quem nos visita</h2>
-          <div className="mx-auto mt-10 max-w-2xl rounded border border-dashed border-border bg-secondary px-6 py-12">
-            <p className="font-display text-2xl">Espaço reservado para avaliações reais</p>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">Os depoimentos de clientes poderão ser adicionados aqui após a aprovação do proprietário.</p>
-          </div>
-        </div>
-      </section>
       <ContactBand />
     </>
   );
