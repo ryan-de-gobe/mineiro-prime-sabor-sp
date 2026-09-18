@@ -1,5 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Beef, Beer, Heart, MapPin, UtensilsCrossed } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Beef, Beer, Heart, MapPin, UtensilsCrossed, type LucideIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { ContactBand } from "@/components/site-shell";
@@ -27,6 +27,13 @@ export const Route = createFileRoute("/")({
 
 // IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const highlights: Array<[LucideIcon, string, string]> = [
+    [UtensilsCrossed, "Culinária mineira", "Sabores brasileiros em destaque"],
+    [Heart, "Ambiente descontraído", "Para compartilhar bons momentos"],
+    [Beef, "Comidas e porções", "Opções para diferentes ocasiões"],
+    [Beer, "Bebidas", "Para acompanhar sua experiência"],
+  ];
+
   return (
     <>
       <section className="relative flex min-h-[88svh] items-end overflow-hidden bg-section-dark pt-20 text-hero-foreground">
@@ -38,7 +45,7 @@ function Index() {
             <h1 className="mt-5 font-display text-5xl leading-[0.98] sm:text-6xl lg:text-8xl">Sabor mineiro no coração de São Paulo</h1>
             <p className="mt-6 max-w-xl text-base leading-7 text-hero-muted sm:text-lg">Comida brasileira, boas bebidas e um ambiente descontraído para aproveitar sem pressa.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild variant="brand" size="xl"><a href="/cardapio">Conheça nosso cardápio <ArrowRight /></a></Button>
+              <Button asChild variant="brand" size="xl"><Link to="/cardapio">Conheça nosso cardápio <ArrowRight /></Link></Button>
               <Button asChild variant="heroOutline" size="xl"><a href="https://www.google.com/maps/search/?api=1&query=Rua+Ant%C3%B4nio+Carlos+282+Consola%C3%A7%C3%A3o+S%C3%A3o+Paulo" target="_blank" rel="noreferrer"><MapPin /> Como chegar</a></Button>
             </div>
           </div>
@@ -51,7 +58,7 @@ function Index() {
             <p className="eyebrow text-primary">À mesa</p>
             <h2 className="mt-4 font-display text-4xl leading-tight sm:text-5xl">Comida que acolhe.<br />Encontro que fica.</h2>
             <p className="mt-6 max-w-lg leading-7 text-muted-foreground">O O Mineiro Prime reúne a culinária brasileira e mineira, opções de comidas e bebidas e um ambiente descontraído na Consolação.</p>
-            <Button asChild variant="outline" size="xl" className="mt-8"><a href="/sobre">Conheça o restaurante <ArrowRight /></a></Button>
+            <Button asChild variant="outline" size="xl" className="mt-8"><Link to="/sobre">Conheça o restaurante <ArrowRight /></Link></Button>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <img src={foodImage} alt="Porções e carnes servidas à mesa" loading="lazy" width={1408} height={1056} className="mt-10 aspect-[4/5] w-full rounded object-cover" />
@@ -62,16 +69,11 @@ function Index() {
 
       <section className="border-y border-border bg-secondary px-5 py-16 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-px overflow-hidden rounded border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            [UtensilsCrossed, "Culinária mineira", "Sabores brasileiros em destaque"],
-            [Heart, "Ambiente descontraído", "Para compartilhar bons momentos"],
-            [Beef, "Comidas e porções", "Opções para diferentes ocasiões"],
-            [Beer, "Bebidas", "Para acompanhar sua experiência"],
-          ].map(([Icon, title, text]) => (
-            <div key={String(title)} className="bg-background p-7">
+          {highlights.map(([Icon, title, text]) => (
+            <div key={title} className="bg-background p-7">
               <Icon className="size-6 text-primary" aria-hidden="true" />
-              <h3 className="mt-5 font-display text-2xl">{String(title)}</h3>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">{String(text)}</p>
+              <h3 className="mt-5 font-display text-2xl">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{text}</p>
             </div>
           ))}
         </div>
